@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akreditasi - FMIPA UNTAN</title>
+    <style>
+    /* --- Pengaturan Dasar --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4; /* Latar belakang abu-abu muda */
+}
+
+/* --- Header / Navigasi (Desain Biru Tua) --- */
+.header-bar {
+    background-color: #004a99; /* Warna biru tua dari gambar */
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #003366;
+}
+
+.logo-title-group {
+    display: flex;
+    align-items: center;
+}
+
+.logo-title-group img {
+    height: 75px;
+    margin-right: 20px;
+}
+
+.title-group h1 {
+    margin: 0;
+    font-size: 1.5em; 
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.title-group h2 {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: normal;
+    color: #E0E0E0;
+}
+
+/* --- Menu Navigasi --- */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding-bottom: 10px;
+    border-bottom: 4px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+/* --- Link yang Aktif (Kuning) --- */
+nav a.active {
+    color: #FFD700; /* Warna kuning */
+    border-bottom-color: #FFD700;
+}
+
+nav a:hover:not(.active) {
+    color: #ddd; 
+}
+
+/* --- Konten Utama Halaman --- */
+.main-content {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-height: 400px;
+}
+
+.main-content h2 {
+    font-size: 2em;
+    color: #004a99; /* Samakan dengan warna header */
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.main-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* --- Menu Link di Halaman Profil --- */
+.profile-link-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+.profile-link-list li {
+    margin-bottom: 15px;
+}
+.profile-link-list a {
+    display: block;
+    background: #f4f4f4;
+    padding: 16px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.1em;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+.profile-link-list a:hover {
+    background-color: #e9ecef;
+    border-color: #ccc;
+}
+
+
+/* --- CSS KHUSUS UNTUK TABEL AKREDITASI --- */
+.table-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+#tabel-akreditasi thead th {
+    background-color: #007bff; /* Biru header tabel */
+    color: white;
+    font-weight: bold;
+}
+.btn-unduh {
+    background-color: #f7941d; /* Oranye */
+    border: none;
+    color: white !important;
+    padding: 5px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.btn-unduh:hover {
+    background-color: #e6861a;
+}
+.icon-kalender {
+    margin-right: 5px;
+}
+div.dataTables_wrapper div.dataTables_filter input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+}
+    </style>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+</head>
+<body>
+    
+    <header class="header-bar">
+        <div class="logo-title-group">
+            <img src="logountan.png" alt="Logo UNTAN">
+            <div class="title-group">
+                <h1>Fakultas Matematika dan Ilmu Pengetahuan Alam</h1>
+                <h2>Universitas Tanjungpura</h2>
+            </div>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="program-pendidikan.html">Program Pendidikan</a></li>
+                <li><a href="penelitian.html">Penelitian</a></li>
+                <li><a href="dosen.html">Dosen</a></li>
+                <li><a href="mahasiswa-alumni.html">Mahasiswa & Alumni</a></li>
+                <li><a href="profil.html" class="active">Profil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h2>📊 Akreditasi Program Studi</h2>
+        <p>Berikut adalah data akreditasi program studi di lingkungan FMIPA Universitas Tanjungpura yang aktif.</p>
+
+        <div class="table-container">
+            <table id="tabel-akreditasi" class="table table-striped table-hover" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Jurusan</th>
+                        <th>Jenjang</th>
+                        <th>Nomor SK</th>
+                        <th>Tahun SK</th>
+                        <th>Akreditasi</th>
+                        <th>File</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Biologi</td>
+                        <td>S1</td>
+                        <td>040/SK/LAMSAMA/Akred/S/VII/2023</td>
+                        <td><span class="icon-kalender">📅</span>2023</td>
+                        <td>BAIK SEKALI</td>
+                        <td><a href="#" class="btn-unduh">Unduh</a></td>
+                    </tr>
+                    <tr>
+                        <td>Fisika</td>
+                        <td>S1</td>
+                        <td>035/SK/LAMSAMA/Akred/S/V/2023</td>
+                        <td><span class="icon-kalender">📅</span>2023</td>
+                        <td>BAIK</td>
+                        <td><a href="#" class="btn-unduh">Unduh</a></td>
+                    </tr>
+                    <tr>
+                        <td>Geofisika</td>
+                        <td>S1</td>
+                        <td>083/SK/LAMSAMA/Akred/S/VIII/2024</td>
+                        <td><span class="icon-kalender">📅</span>2024</td>
+                        <td>UNGGUL</td>
+                        <td><a href="#" class="btn-unduh">Unduh</a></td>
+                    </tr>
+                    <tr>
+                        <td>Ilmu Kelautan</td>
+                        <td>S1</td>
+                        <td>5675/SK/BAN-PT/Ak.KP/S/V/2025</td>
+                        <td><span class="icon-kalender">📅</span>2025</td>
+                        <td>BAIK SEKALI</td>
+                        <td><a href="#" class="btn-unduh">Unduh</a></td>
+                    </tr>
+                    <tr>
+                        <td>Kimia</td>
+                        <td>S2</td>
+                        <td>116/SK/LAMSAMA/Akred/M/XII/2024</td>
+                        <td><span class="icon-kalender">📅</span>2024</td>
+                        <td>UNGGUL</td>
+                        <td><a href="#" class="btn-unduh">Unduh</a></td>
+                    </tr>
+                    <tr>
+                        <td>Kimia</td>
+                        <td>S1</td>
+                        <td>015/SK/LAMSAMA/Akred/S/III/2023</td>
+                        <td><span class="icon-kalender">📅</span>2023</td>
+                        <td>UNGGUL</td>
+                        <td><a href="#" class="btn-unduh">Unduh</a></td>
+                    </tr>
+                    <tr>
+                        <td>Matematika</td>
+                        <td>S1</td>
+                        <td>4193/SK/BAN-PT/Ak.KP/S/X/2023</td>
+                        <td><span class="icon-kalender">📅</span>2023</td>
+                        <td>BAIK SEKALI</td>
+                        <td><a href="#" class="btn-unduh">Unduh</a></td>
+                    </tr>
+                    <tr>
+                        <td>Rekayasa Sistem Komputer</td>
+                        <td>S1</td>
+                        <td>052/SK/LAM-INFOKOM/Ak/S/IV/2023</td>
+                        <td><span class="icon-kalender">📅</span>2023</td>
+                        <td>BAIK SEKALI</td>
+                        <td><a href="#" class="btn-unduh">Unduh</a></td>
+                    </tr>
+                    <tr>
+                        <td>Sistem Informasi</td>
+                        <td>S1</td>
+                        <td>077/SK/LAM-INFOKOM/Ak/S/VIII/2023</td>
+                        <td><span class="icon-kalender">📅</span>2023</td>
+                        <td>BAIK SEKALI</td>
+                        <td><a href="#" class="btn-unduh">Unduh</a></td>
+                    </tr>
+                    <tr>
+                        <td>Statistika</td>
+                        <td>S1</td>
+                        <td>129/SK/LAMSAMA/Akred/S/XII/2023</td>
+                        <td><span class="icon-kalender">📅</span>2023</td>
+                        <td>BAIK SEKALI</td>
+                        <td><a href="#" class="btn-unduh">Unduh</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+    <script>
+        // Script untuk mengaktifkan DataTables dengan bahasa Indonesia
+        $(document).ready(function() {
+            $('#tabel-akreditasi').DataTable({
+                "language": {
+                    "search": "Cari:",
+                    "lengthMenu": "Tampilkan _MENU_ data",
+                    "info": "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
+                    "infoEmpty": "Tidak ada data",
+                    "zeroRecords": "Data tidak ditemukan",
+                    "paginate": {
+                        "first": "Pertama",
+                        "last": "Terakhir",
+                        "next": "Selanjutnya",
+                        "previous": "Sebelumnya"
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

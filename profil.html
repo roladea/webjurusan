@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profil Fakultas - FMIPA UNTAN</title>
+    <style>
+        /* SEMUA CSS DASAR ANDA */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #222;
+            background-color: #f9f9f9; /* Background abu-abu muda */
+        }
+        .header { background-color: #004080; border-bottom: 2px solid #eaeaea; padding: 20px 0 0 0;}
+        .header-content { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: auto; padding: 0 40px;}
+        .logo-area { display: flex; align-items: center;}
+        .logo { width: 78px; height: 78px; background: #d6eaec; border-radius: 50%; margin-right: 24px; display: flex; align-items: center; justify-content: center;}
+        .logo img { max-width: 230%; max-height: 230%; object-fit: contain;}
+        .faculty-title { font-size: 1.25rem; font-weight: bold; color: #ffffff;}
+        .subtitle { font-size: 1rem; color: #f0f0f0; margin-top: 4px;}
+        .nav { display: flex; align-items: center; gap: 32px; font-size: 1.08rem; font-weight: 600;}
+        .nav a { color: #ffffff; text-decoration: none; transition: color 0.2s; position: relative; padding-bottom: 3px;}
+        .nav a.active, .nav a:hover { color: #ffc600;}
+        .nav a.active::after { content: ''; display: block; height: 4px; border-radius: 2px; background: #ffc600; width: 100%; position: absolute; bottom: -3px; left: 0;}
+        .main-content { max-width: 900px; margin: 35px auto; padding: 20px 24px 32px 24px; background: #fff; border-radius: 10px; box-shadow: 0 2px 16px rgba(0,0,0,0.06);}
+        .main-section { margin-bottom: 38px; }
+        .main-section h2 { color: #004080; margin-bottom: 8px; font-weight: bold; font-size: 1.2rem;}
+        .footer { background: #181820; color: #fff; padding: 40px 0; margin-top: 40px; font-size: 0.97rem; }
+        .footer-content { max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; padding: 0 40px; }
+        .footer-col { flex: 1 1 220px; margin-bottom: 10px; min-width: 200px; }
+        .footer-title { font-weight: bold; font-size: 1.05rem; margin-bottom: 12px; border-bottom: 1px solid #4a4a5a; padding-bottom: 4px; }
+        .footer-list { list-style: none; padding: 0; margin: 0; line-height: 2.05; color: #e4e4e5; }
+        .footer-list a { color: #e4e4e5; text-decoration: none; transition: color 0.2s; }
+        .footer-list a:hover { color: #ffc600; }
+        .footer-logo { margin-bottom: 15px; }
+        @media (max-width: 700px){ .header-content, .footer-content { padding: 0 10px; flex-direction: column; gap:20px;} .nav { gap:18px; } .footer-content { gap:20px;} .main-content { padding: 12px 5px 18px 5px; } }
+        
+        /* ▼▼▼ CSS BARU UNTUK 3 KOLOM PROFIL ▼▼▼ */
+        .profil-grid {
+            display: grid;
+            /* Membuat 3 kolom, dan responsif menjadi 1 kolom di layar kecil */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px; /* Jarak antar kolom */
+        }
+        
+        .profil-col h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #004080; /* Judul kolom biru */
+            border-bottom: 2px solid #ffc600; /* Garis kuning */
+            padding-bottom: 8px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .profil-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .profil-col li {
+            margin-bottom: 12px;
+        }
+        
+        .profil-col a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.05rem;
+            transition: color 0.2s;
+        }
+        
+        .profil-col a:hover {
+            color: #004080; /* Warna biru saat disentuh */
+            text-decoration: underline;
+        }
+        /* ▲▲▲ AKHIR DARI CSS BARU ▲▲▲ */
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="logo-area">
+                <div class="logo">
+                    <img src="logountan.png" alt="Logo Universitas Tanjungpura" />
+                </div>
+                <div>
+                    <div class="faculty-title">Fakultas Matematika dan Ilmu Pengetahuan Alam</div>
+                    <div class="subtitle">Universitas Tanjungpura</div>
+                </div>
+            </div>
+            
+            <nav class="nav">
+                <a href="index.html">Beranda</a> 
+                <a href="programstudi.html">Program Pendidikan</a>
+                <a href="#">Penelitian</a>
+                <a href="#">Dosen</a>
+                <a href="#">Mahasiswa & Alumni</a>
+                <a href="#" class="active">Profil</a> </nav>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <section class="main-section" id="profil-fakultas">
+            <div class="profil-grid">
+                
+                <div class="profil-col">
+                    <h3>Tentang Kami</h3>
+                    <ul>
+                        <li><a href="sejarah.html">Sejarah FMIPA UNTAN</a></li>
+                        <li><a href="pimpinan.html">Pimpinan Fakultas</a></li>
+                        <li><a href="#">Senat Akademik Fakultas</a></li>
+                    </ul>
+                </div>
+
+                <div class="profil-col">
+                    <h3>Manajemen</h3>
+                    <ul>
+                        <li><a href="#">Pimpinan Fakultas</a></li>
+                        <li><a href="#">Pimpinan Jurusan</a></li>
+                        <li><a href="#">Pusat Administrasi Fakultas</a></li>
+                        <li><a href="#">Pimpinan Lembaga</a></li>
+                    </ul>
+                </div>
+
+                <div class="profil-col">
+                    <h3>Sumber Daya</h3>
+                    <ul>
+                        <li><a href="#">Profil Dosen</a></li>
+                        <li><a href="#">Tenaga Kependidikan</a></li>
+                        <li><a href="#">Fasilitas & Laboratorium</a></li>
+                        <li><a href="akreditasi.html">Akreditasi</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo"> 
+                    <span style="background:#fff; padding:8px; border-radius:6px; color:#004080;">FMIPA UNTAN</span>
+                </div>
+                Gedung Dekanat FMIPA UNTAN<br/>
+                Jl. Profesor H. Hadari Nawawi<br/>
+                Pontianak, Kalimantan Barat 78124<br/>
+                Indonesia<br/>
+                Telepon : (0561) 123456<br/>
+                Email: fmipa@untan.ac.id
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">Akademik</div>
+                <ul class="footer-list">
+                    <li><a href="#">Jurusan Matematika</a></li>
+                    <li><a href="#">Jurusan Fisika</a></li>
+                    <li><a href="#">Jurusan Geofisika</a></li>
+                    <li><a href="#">Jurusan Kimia</a></li>
+                    <li><a href="#">Jurusan Biologi</a></li>
+                    <li><a href="#">Jurusan Statistika</a></li>
+                    <li><a href="#">Jurusan Sistem Informasi</a></li>
+                    <li><a href="#">Jurusan Rekayasa Sistem Komputer</a></li>
+                    <li><a href="#">Jurusan Ilmu Kelautan</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">Tentang Fakultas</div>
+                <ul class="footer-list">
+                    <li><a href="#">Sejarah FMIPA UNTAN</a></li>
+                    <li><a href="#">Manajemen</a></li>
+                    <li><a href="#">Profil Dosen</a></li>
+                    </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">Hubungi Kami</div>
+                <ul class="footer-list">
+                    <li><a href="#">Kunjungan Kampus</a></li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.classList.contains('active')) {
+                    e.preventDefault();
+                    return;
+                }
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelectorAll('.nav a').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    const id = href.substring(1);
+                    let section = document.getElementById(id);
+                    if(section) {
+                        section.scrollIntoView({behavior: "smooth"});
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

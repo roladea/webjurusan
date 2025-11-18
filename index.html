@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fakultas Matematika dan Ilmu Pengetahuan Alam Universitas Tanjungpura</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #222;
+            background-color: #f9f9f9; /* Warna cadangan */
+            
+            /* GANTI NAMA FILE INI jika nama file foto Anda berbeda */
+            background-image: url('e31f106634b62687c180d767b0f7ec48Galeri-Mipa-3.jpg'); 
+            
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed; /* Diam saat di-scroll */
+        }
+        
+        /* HEADER BIRU TUA DENGAN TEKS PUTIH */
+        .header { 
+            background-color: #004080; /* <-- BIRU TUA */
+            border-bottom: 2px solid #eaeaea; 
+            padding: 20px 0 0 0;
+        }
+        .header-content {
+            display: flex; align-items: center;
+            justify-content: space-between; max-width: 1200px;
+            margin: auto; padding: 0 40px;
+        }
+        
+        .logo-area { display: flex; align-items: center;}
+        
+        .logo {
+            width: 78px; height: 78px; background: #d6eaec;
+            border-radius: 50%; margin-right: 24px;
+            display: flex; align-items: center;
+            justify-content: center;
+        }
+        .logo img {
+            max-width: 230%;
+            max-height: 230%;
+            object-fit: contain;
+        }
+
+        .faculty-title { 
+            font-size: 1.25rem; 
+            font-weight: bold; 
+            color: #ffffff; /* <-- TEKS PUTIH */
+        }
+        .subtitle { 
+            font-size: 1rem; 
+            color: #f0f0f0; /* <-- TEKS PUTIH PUDAR */
+            margin-top: 4px;
+        }
+        .nav { display: flex; align-items: center; gap: 32px; font-size: 1.08rem; font-weight: 600;}
+        .nav a { 
+            color: #ffffff; /* <-- TEKS PUTIH */
+            text-decoration: none; 
+            transition: color 0.2s; 
+            position: relative; 
+            padding-bottom: 3px;
+        }
+        .nav a.active, .nav a:hover { color: #ffc600;}
+        .nav a.active::after {
+            content: ''; display: block; height: 4px;
+            border-radius: 2px; background: #ffc600;
+            width: 100%; position: absolute; bottom: -3px; left: 0;
+        }
+        
+        .icon-strip {
+            display: flex; gap: 10px; justify-content: center;
+            background: #fff; padding: 12px 0;
+            border-bottom: 2px solid #eaeaea;
+        }
+        .icon {
+            width: 48px; height: 48px; background: #e0f7fa;
+            border-radius: 8px; display: flex;
+            justify-content: center; align-items: center;
+            font-size: 28px;
+        }
+        
+        /* KONTEN UTAMA DENGAN BACKGROUND PUTIH TRANSPARAN */
+        .main-content {
+            max-width: 900px;
+            margin: 35px auto;
+            padding: 20px 24px 32px 24px;
+            /* Ini adalah PUTIH (255,255,255) dengan transparansi 95% */
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+        }
+        .main-section {
+            margin-bottom: 38px;
+        }
+        /* ... (kode CSS Anda sebelumnya) ... */
+        .main-section h2 {
+            color: #004080;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* ▼▼▼ TAMBAHKAN KODE CSS BARU INI ▼▼▼ */
+        .section-title-wrapper {
+            display: flex; /* Membuat ikon dan teks sejajar */
+            align-items: center; /* Menyelaraskan secara vertikal */
+            border-bottom: 3px solid #ffc600; /* Garis bawah kuning */
+            padding-bottom: 10px; /* Jarak antara teks dan garis bawah */
+            margin-bottom: 25px; /* Jarak ke paragraf "Assalamualaikum" */
+        }
+        
+        .section-title-wrapper .title-icon {
+            font-size: 2.2rem; /* Ukuran ikon megafon */
+            margin-right: 15px; /* Jarak antara ikon dan teks */
+            color: #333;
+        }
+
+        .section-title-wrapper h2 {
+            margin: 0; /* Hapus margin bawaan h2 */
+            color: #333; /* Warna teks judul (hitam) */
+            font-size: 1.6rem; /* Membuatnya sedikit lebih besar */
+            font-weight: 700; /* Bold */
+        }
+        /* ▲▲▲ AKHIR DARI CSS BARU ▲▲▲ */
+        .map-iframe {
+            width: 100%;      /* Lebar penuh */
+            height: 450px;    /* Tingginya, bisa Anda sesuaikan */
+            border-radius: 8px; /* Sudut agak melengkung */
+            border: 0;        /* Hapus border default */
+            margin-top: 25px; /* Jarak dari judul */
+        }
+
+        .lokasi-content-wrapper {
+            background: rgba(255, 255, 255, 0.95); /* Putih transparan */
+            border-radius: 10px; /* Sudut melengkung */
+            padding: 20px 24px 32px 24px; /* Padding sama seperti main-content */
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06); /* Shadow */
+            margin-top: 35px; /* Jarak dari section sebelumnya */
+        }
+
+        .main-section ul {
+       
+            margin-left: 18px;
+            margin-top: 5px;
+        }
+        .main-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .footer {
+            background: #181820; color: #fff;
+            padding: 40px 0; margin-top: 40px; font-size: 0.97rem;
+        }
+        .footer-content {
+            max-width: 1200px; margin: auto;
+            display: flex; flex-wrap: wrap; gap: 40px;
+            justify-content: space-between; padding: 0 40px;
+        }
+        .footer-col {
+            flex: 1 1 220px; margin-bottom: 10px; min-width: 200px;
+        }
+        .footer-title {
+            font-weight: bold; font-size: 1.05rem;
+            margin-bottom: 12px; border-bottom: 1px solid #4a4a5a;
+            padding-bottom: 4px;
+        }
+        .footer-list {
+            list-style: none; padding: 0;
+            margin: 0; line-height: 2.05; color: #e4e4e5;
+        }
+        .footer-list a {
+            color: #e4e4e5; text-decoration: none; transition: color 0.2s;
+        }
+        .footer-list a:hover { color: #ffc600; }
+        .footer-logo { margin-bottom: 15px; }
+        
+        @media (max-width: 700px){
+            .header-content, .footer-content { padding: 0 10px; flex-direction: column; gap:20px;}
+            .nav { gap:18px; }
+            .icon-strip { flex-wrap: wrap; }
+            .footer-content { gap:20px;}
+            .main-content { padding: 12px 5px 18px 5px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="logo-area">
+                <div class="logo">
+                    <img src="logountan.png" alt="Logo Universitas Tanjungpura" />
+                </div>
+                <div>
+                    <div class="faculty-title">
+                        Fakultas Matematika dan Ilmu Pengetahuan Alam
+                    </div>
+                    <div class="subtitle">
+                        Universitas Tanjungpura
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="nav">
+                <a href="#" class="active">Beranda</a>
+                <a href="program.html">Program Pendidikan</a> <a href="#">Penelitian</a>
+                <a href="#">Dosen</a>
+                <a href="#">Mahasiswa & Alumni</a>
+                <a href="profil.html">Profil</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <section class="main-section" id="beranda">
+            <h2>Selamat Datang di FMIPA Universitas Tanjungpura</h2>
+
+            <div class="section-title-wrapper">
+                <span class="title-icon">📢</span>
+                <h2>SAMBUTAN DEKAN FMIPA</h2>
+            </div>
+            <p><b>Assalaamu’alaikum wr. wb.</b></p>
+            <p>Selamat datang di website resmi Fakultas Matematika dan Ilmu Pengetahuan Alam Universitas Tanjungpura (FMIPA Untan) Pontianak. Pada awal berdirinya tahun 2002, FMIPA Untan bernama Fakultas Matematika dan Ilmu Pengetahuan Alam (Persiapan). Ketika pertama kali menerima mahasiswa pada tahun akademik 2002/2003 , FMIPA Untan menyelenggarakan proses pembelajaran pada empat program studi jenjang S-1 yaitu Matematika, Fisika, Kimia, dan Biologi. Saat ini FMIPA Untan menyelenggarakan sembilan program studi jenjang S-1 (Matematika, Fisika, Kimia, Biologi, Rekayasa Sistem Komputer, Ilmu Kelautan, Sistem Informasi, Statistik, Geofisika). dan satu program studi jenjang S-2 (Kimia).  Website ini dikembangkan guna memenuhi kebutuhan internal sekaligus sebagai media informasi kegiatan FMIPA bagi masyarakat, stakeholders, mahasiswa, orangtua mahasiswa, dan masyarakat profesi. Informasi mengenai sejarah, profil, layanan akademik, kerja sama, program yang ditawarkan serta aktivitas lainnya dapat ditelusuri pada website ini.
+
+FMIPA Untan Mempunyai visi untuk “Menjadi institusi unggul dalam tranformasi, pengembangan dan penyebarluasan sains dan teknologi berbasi lingkungan tropis dengan luaran berdaya saing global”. Sebagai wujud kepedulian FMIPA Untan terhadap tujuan pembangunan nasional, FMIPA Untan terus berupaya melakukan evaluasi, pengembangan, dan pembaruan untuk merespon kebutuhan stakeholders. FMIPA Untan selalu terus mengembangkan dirinya dan melakukan perbaikan dalam berbagai sisi sesuai Komitmen kami untuk menjadikan “QUALITY IS OUR CONCERN”
+
+Dengan senang hati kami menerima komentar, saran, dan kerja sama guna perbaikan secara berkesinambungan dalam upaya berkontribusi dalam pengembangan riset dan pengetahuan di Indonesia.</p>
+            <p><b>Wassalaamu’alaikum wr. wb.</b></p>
+        </section>
+        <section class="main-section" id="visi-misi">
+            <h2>Visi</h2>
+            <p>Menjadi institusi unggul dalam tranformasi, pengembangan dan penyebarluasan sains dan teknologi berbasis lingkungan tropis dengan luaran berdaya saing global.</p>
+            <h2>Misi</h2>
+            <ul>
+                <li>Menyelenggarakan aktivitas Pendidikan Tinggi secara terpadu untuk menghasilkan luaran berkualitas yang adaptif terhadap pengembangan sains dan teknologi dengan tetap memegang teguh jadi diri bangsa.</li>
+                <li>Melaksanakan aktivitas riset yang terarah, berkesinambungan, dan berwawasan lingkungan dengan berorientasi pada pengembangan potensi lokal Kalimantan Barat.</li>
+                <li>Melakukan kegiatan Pengabdian yang berdampak bagi peningkatan kualitas lingkungan dan kesejahteraan masyarakat.</li>
+            </ul>
+        </section>
+        <section class="main-section" id="profil">
+            <h2>Tujuan</h2>
+            <p>Fakultas Matematika dan Ilmu Pengetahuan Alam Universitas Tanjungpura (FMIPA Untan) mengelola kegiatan sesuai dengan visi dan misi yang telah ditetapkan dengan tujuan memberikan bekal konsep ilmu dasar dan terapannya melalui proses pendidikan tinggi serta penelitian yang inovatif dan kreatif, mengembangkan serta memanfaatkan ilmu dasar dan terapannya secara mandiri maupun bersinergi dengan ilmu terkait guna meningkatkan nilai tambah yang kompetitif dan kualitas sumber daya manusia, serta memberikan solusi terhadap permasalahan masyarakat yang berkaitan dengan bidang ilmu MIPA.</p>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo"> 
+                    <span style="background:#fff; padding:8px; border-radius:6px; color:#004080;">FMIPA UNTAN</span>
+                </div>
+                Gedung Dekanat FMIPA UNTAN<br/>
+                Jl. Profesor H. Hadari Nawawi<br/>
+                Pontianak, Kalimantan Barat 78124<br/>
+                Indonesia<br/>
+                Telepon : (0561) 123456<br/>
+                Email: fmipa@untan.ac.id
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">Akademik</div>
+                <ul class="footer-list">
+                    <li><a href="#">Jurusan Matematika</a></li>
+                    <li><a href="#">Jurusan Fisika</a></li>
+                    <li><a href="#">Jurusan Geofisika</a></li>
+                    <li><a href="#">Jurusan Kimia</a></li>
+                    <li><a href="#">Jurusan Biologi</a></li>
+                    <li><a href="#">Jurusan Statistika</a></li>
+                    <li><a href="#">Jurusan Sistem Informasi</a></li>
+                    <li><a href="#">Jurusan Rekayasa Sistem Komputer</a></li>
+                    <li><a href="#">Jurusan Ilmu Kelautan</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">Tentang Fakultas</div>
+                <ul class="footer-list">
+                    <li><a href="#">Sejarah FMIPA UNTAN</a></li>
+                    <li><a href="#">Manajemen</a></li>
+                    <li><a href="#">Profil Dosen</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">Hubungi Kami</div>
+                <ul class="footer-list">
+                    <li><a href="#">Kunjungan Kampus</a></li>
+                    <li><a href="#">Peta Kampus</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        </section>
+        
+        <section class="main-section" id="lokasi">
+            <div class="lokasi-content-wrapper"> <div class="section-title-wrapper">
+                    <span class="title-icon">🗺️</span>
+                    <h2>PETA LOKASI FAKULTAS MIPA</h2>
+                </div>
+                <iframe 
+                    class="map-iframe"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.818063073995!2d109.35626231475355!3d-0.0768962999999988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3be6644265507b%3A0xc3f1a2e3f0d4b9b!2sFakultas%20Matematika%20dan%20Ilmu%20Pengetahuan%20Alam!5e0!3m2!1sid!2sid!4v1628766157833!5m2!1sid!2sid" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div> </section>
+
+        </section>
+        </div> <div class="footer">
+
+    <script>
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Jangan lakukan apa-apa jika link ini SUDAH aktif
+                if (this.classList.contains('active')) {
+                    e.preventDefault();
+                    return;
+                }
+
+                // Cek apakah link ini adalah link internal (#)
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    // Jika ya, cegah pindah halaman
+                    e.preventDefault();
+                    
+                    // Pindahkan kelas 'active'
+                    document.querySelectorAll('.nav a').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Scroll ke section
+                    const id = href.substring(1); // Ambil id dari href
+                    let section = document.getElementById(id);
+                    if(section) {
+                        section.scrollIntoView({behavior: "smooth"});
+                    }
+                }
+                // Jika href BUKAN link internal (seperti "program.html"),
+                // biarkan browser pindah halaman secara normal.
+            });
+        });
+    </script>
+</body>
+</html>
