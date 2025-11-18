@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Dosen & Staff - FMIPA UNTAN</title>
     <style>
-        /* SEMUA CSS DASAR ANDA (Sama seperti halaman lain) */
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -36,13 +35,12 @@
         .footer-logo { margin-bottom: 15px; }
         @media (max-width: 700px){ .header-content, .footer-content { padding: 0 10px; flex-direction: column; gap:20px;} .nav { gap:18px; } .footer-content { gap:20px;} .main-content { padding: 12px 5px 18px 5px; } }
         
-        /* CSS UNTUK JUDUL SAMBUTAN DEKAN (Kita pakai ulang) */
         .section-title-wrapper {
             display: flex; 
             align-items: center; 
             border-bottom: 3px solid #ffc600; 
             padding-bottom: 10px; 
-            margin-bottom: 35px; /* Jarak lebih besar untuk grid foto */
+            margin-bottom: 35px; 
         }
         .section-title-wrapper .title-icon {
             font-size: 2.2rem; 
@@ -56,10 +54,8 @@
             font-weight: 700;
         }
 
-        /* ▼▼▼ CSS BARU UNTUK KARTU DOSEN ▼▼▼ */
         .dosen-grid {
             display: grid;
-            /* 4 kolom di layar besar, 2 di layar sedang, 1 di layar kecil */
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
         }
@@ -71,15 +67,15 @@
         .dosen-photo-wrapper {
             position: relative;
             margin-bottom: 15px;
-            display: inline-block; /* Agar wrapper pas dengan gambar */
+            display: inline-block; 
         }
 
         .dosen-photo {
-            width: 140px; /* Lebar foto */
-            height: 140px; /* Tinggi foto */
-            border-radius: 50%; /* Membuat foto jadi bulat */
-            object-fit: cover; /* Memastikan foto tidak gepeng */
-            border: 1px solid #ddd; /* Garis tipis di foto */
+            width: 140px; 
+            height: 140px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 1px solid #ddd; 
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
@@ -98,7 +94,7 @@
         
         .dosen-role {
             font-size: 0.9rem;
-            color: #004080; /* Warna biru untuk jabatan */
+            color: #004080; 
             font-weight: 600;
             margin-bottom: 10px;
         }
@@ -113,7 +109,7 @@
             width: 30px;
             height: 30px;
             border-radius: 50%;
-            background-color: #f0f0f0; /* Background ikon abu-abu */
+            background-color: #f0f0f0; 
             color: #555;
             display: flex;
             align-items: center;
@@ -126,7 +122,6 @@
         .dosen-link-icon:hover {
             background-color: #ddd;
         }
-        /* ▲▲▲ AKHIR DARI CSS BARU ▲▲▲ */
         
     </style>
 </head>

@@ -9,7 +9,11 @@
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #222;
-            background-color: #f9f9f9;
+            background-color: #bbb6b6;
+
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         .header { background-color: #5B3A8B; border-bottom: 2px solid #eaeaea; padding: 20px 0 0 0;}
         .header-content { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: auto; padding: 0 40px;}
@@ -19,7 +23,7 @@
         .faculty-title { font-size: 1.25rem; font-weight: bold; color: #ffffff;}
         .subtitle { font-size: 1rem; color: #f0f0f0; margin-top: 4px;}
         .nav { display: flex; align-items: center; gap: 32px; font-size: 1.08rem; font-weight: 600;}
-        .nav a { color: #ffffff; text-decoration: none; transition: color 0.2s; position: relative; padding-bottom: 3px;}
+        .nav a { color: #ffff; text-decoration: none; transition: color 0.2s; position: relative; padding-bottom: 3px;}
         .nav a.active, .nav a:hover { color: #ffc600;}
         .nav a.active::after { content: ''; display: block; height: 4px; border-radius: 2px; background: #ffc600; width: 100%; position: absolute; bottom: -3px; left: 0;}
         
@@ -27,19 +31,19 @@
             max-width: 900px;
             margin: 35px auto;
             padding: 20px 24px 32px 24px;
-            background: #5B3A8B; /* Warna ungu tua */
+            background: #5B3A8B; 
             border-radius: 10px;
             box-shadow: 0 2px 16px rgba(255, 255, 255, 0.06);
-            color: #ffffff; /* Teks di dalam jadi putih */
+            color: #ffffff; 
         }
         
         .main-section { margin-bottom: 38px; }
         .main-section h2 { color: #ffff; margin-bottom: 8px; font-weight: bold; font-size: 1.2rem;}
-        .main-section h3 { color: #ffff; font-weight: 600; font-size: 1.1rem; margin-top: 25px;}
+        .main-section h3 { color: #5B3A8B; font-weight: 600; font-size: 1.1rem; margin-top: 25px;}
         .main-section ul { margin-left: 18px; margin-top: 5px; }
         .main-section p { line-height: 1.6; }
         
-        .footer { background: #181820; color: #fff; padding: 40px 0; margin-top: 40px; font-size: 0.97rem; }
+        .footer { background: #181820; color: #fff; padding: 40px 0; margin-top: auto; font-size: 0.97rem; }
         .footer-content { max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; padding: 0 40px; }
         .footer-col { flex: 1 1 220px; margin-bottom: 10px; min-width: 200px; }
         .footer-title { font-weight: bold; font-size: 1.05rem; margin-bottom: 12px; border-bottom: 1px solid #4a4a5a; padding-bottom: 4px; }
@@ -227,6 +231,141 @@
             margin-top: 5px;
         }
 
+        .facility-section {
+            padding-top: 25px;
+            margin-top: 35px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2); 
+        }
+
+        .facility-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff; 
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .facility-card {
+            background: #ffffff; 
+            color: #333; 
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            overflow: hidden; 
+            transition: transform 0.2s;
+        }
+        .facility-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .facility-card img {
+            width: 100%;
+            height: 180px; 
+            object-fit: cover; 
+            display: block;
+        }
+
+        .facility-content {
+            padding: 20px 25px 25px 25px;
+            text-align: center;
+        }
+
+        .facility-content h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: #004080; 
+        }
+
+        .facility-content p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #555; 
+        }
+
+        .dosen-section {
+            padding-top: 25px;
+            margin-top: 35px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2); 
+        }
+
+        .dosen-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 30px; 
+        }
+
+        .dosen-card {
+            background: #5B3A8B;  
+            color: #333;         
+            padding: 25px 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .dosen-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .dosen-photo {
+            width: 140px; 
+            height: 140px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 1px solid #ddd; 
+            margin-bottom: 15px;
+        }
+
+        .dosen-name {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 2px;
+        }
+        
+        .dosen-role {
+            font-size: 0.9rem;
+            color: #004080; /* Warna biru untuk jabatan */
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .dosen-links {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .dosen-link-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #f0f0f0; /* Background ikon abu-abu */
+            color: #555;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+        .dosen-link-icon:hover {
+            background-color: #5B3A8B;
+        }
+        
+    </style>
+</head>
+        
+    </style>
+</head>
+
     </style>
 </head>
 <body>
@@ -293,7 +432,7 @@
         <section class="main-section" id="berita">
             <div class="section-title-wrapper">
                 <span class="title-icon">📰</span>
-                <h2>BERITA & PENGUMUMAN</h2>
+                <h3>BERITA & PENGUMUMAN</h3>
             </div>
             
             <div class="news-grid">
@@ -328,6 +467,133 @@
             </div> 
         </section>
 
+        </div>
+        </section>
+
+        <section class="main-section dosen-section" id="dosen-staff">
+            
+            <div class="section-title-wrapper">
+                <span class="title-icon">👨‍🏫</span>
+                <h2>Dosen</h2>
+            </div>
+            
+            <div class="dosen-grid">
+                
+                <div class="dosen-card">
+                    <img src="bu-renny-1-1023x1536-removebg-preview-e1698993265598-300x287.png" alt="Renny Puspita Sari" class="dosen-photo">
+                    <div class="dosen-name">Renny Puspita Sari, S.T., M.T.</div>
+                    <div class="dosen-role">Ketua Jurusan Sistem Informasi</div>
+                    <div class="dosen-links">
+                        <a href="#" class="dosen-link-icon">G</a>
+                        <a href="#" class="dosen-link-icon">S</a>
+                        <a href="#" class="dosen-link-icon">O</a>
+                    </div>
+                </div>
+
+                <div class="dosen-card">
+                    <img src="1699579752930-removebg-preview-e1699602059606-291x300.png" alt="Ibnur Rusjdi" class="dosen-photo">
+                    <div class="dosen-name">Ibnur Rusjdi, S.Kom., M.M.</div>
+                    <div class="dosen-role">Sekretaris Jurusan Sistem Informasi</div>
+                    <div class="dosen-links">
+                        <a href="#" class="dosen-link-icon">G</a>
+                        <a href="#" class="dosen-link-icon">S</a>
+                        <a href="#" class="dosen-link-icon">O</a>
+                    </div>
+                </div>
+
+                <div class="dosen-card">
+                    <img src="citations-2.jpeg" alt="Nurul Mutiah" class="dosen-photo">
+                    <div class="dosen-name">Nurul Mutiah, S.T., M.T.</div>
+                    <div class="dosen-role">Ketua Kelompok Keahlian...</div>
+                    <div class="dosen-links">
+                        <a href="#" class="dosen-link-icon">G</a>
+                        <a href="#" class="dosen-link-icon">S</a>
+                        <a href="#" class="dosen-link-icon">O</a>
+                    </div>
+                </div>
+
+                <div class="dosen-card">
+                    <img src="pak-dian-new-1-e1714281947163-300x300.jpeg" alt="Dian Prawira" class="dosen-photo">
+                    <div class="dosen-name">Dian Prawira, S.T., M.Eng.</div>
+                    <div class="dosen-role">Ketua Kelompok Keahlian...</div>
+                    <div class="dosen-links">
+                        <a href="#" class="dosen-link-icon">G</a>
+                        <a href="#" class="dosen-link-icon">S</a>
+                        <a href="#" class="dosen-link-icon">O</a>
+                    </div>
+                </div>
+
+                <div class="dosen-card">
+                    <img src="fotopakilham-600x600.jpg" alt="Ilhamsyah" class="dosen-photo">
+                    <div class="dosen-name">Ilhamsyah, S.Si., M.Cs.</div>
+                    <div class="dosen-role">Anggota Kelompok Keahlian...</div>
+                    <div class="dosen-links">
+                        <a href="#" class="dosen-link-icon">G</a>
+                        <a href="#" class="dosen-link-icon">S</a>
+                        <a href="#" class="dosen-link-icon">O</a>
+                    </div>
+                </div>
+                
+                <div class="dosen-card">
+                    <img src="WhatsApp-Image-2024-04-28-at-11.49.07-600x600.jpeg" alt="Syahru Rahmayuda" class="dosen-photo">
+                    <div class="dosen-name">Syahru Rahmayuda, S.Kom, M.Kom.</div>
+                    <div class="dosen-role">Anggota Kelompok Keahlian...</div>
+                    <div class="dosen-links">
+                        <a href="#" class="dosen-link-icon">G</a>
+                        <a href="#" class="dosen-link-icon">S</a>
+                        <a href="#" class="dosen-link-icon">O</a>
+                    </div>
+                </div>
+                
+                <div class="dosen-card">
+                    <img src="foto-pak-ferdy-100x100-1-600x600.jpg" alt="Ferdy Febriyanto" class="dosen-photo">
+                    <div class="dosen-name">Ferdy Febriyanto, S.Kom, M.Kom.</div>
+                    <div class="dosen-role">Anggota Kelompok Keahlian...</div>
+                    <div class="dosen-links">
+                        <a href="#" class="dosen-link-icon">G</a>
+                        <a href="#" class="dosen-link-icon">S</a>
+                        <a href="#" class="dosen-link-icon">O</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="main-section dosen-section" id="staff" style="margin-top: 50px;">
+            
+            <div class="section-title-wrapper">
+                <span class="title-icon">💼</span>
+                <h2>Staff</h2>
+            </div>
+            
+            <div class="dosen-grid">
+
+                <div class="dosen-card">
+                    <img src="Foto_Solihin-removebg-preview-e1714282458866-300x300.png" alt="Solihin" class="dosen-photo">
+                    <div class="dosen-name">Solihin, S.Kom.</div>
+                    <div class="dosen-role">Laboran Jurusan Sistem Informasi</div>
+                    <div class="dosen-links">
+                        <a href="#" class="dosen-link-icon">G</a>
+                        <a href="#" class="dosen-link-icon">S</a>
+                        <a href="#" class="dosen-link-icon">O</a>
+                    </div>
+                </div>
+
+                <div class="dosen-card">
+                    <img src="Jbr__2366rf-removebg-preview-e1698992723807-300x300.png" alt="Agus Setiawan" class="dosen-photo">
+                    <div class="dosen-name">Agus Setiawan, S.Si.</div>
+                    <div class="dosen-role">Admin Jurusan Sistem Informasi</div>
+                    <div class="dosen-links">
+                        <a href="#" class="dosen-link-icon">G</a>
+                        <a href="#" class="dosen-link-icon">S</a>
+                        <a href="#" class="dosen-link-icon">O</a>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <section class="main-section contact-section" id="kontak">
+
         <section class="main-section stats-section" id="statistik">
             <div class="stats-title-container">
                 <h2>Sistem Informasi dalam Angka</h2>
@@ -353,6 +619,60 @@
                 </div>
             </div> 
         </section>
+
+         <section class="main-section facility-section" id="fasilitas">
+            
+            <h2 class="facility-title">Fasilitas</h2>
+
+            <div class="facility-grid">
+                
+                <div class="facility-card">
+                    <img src="WhatsApp-Image-2023-03-13-at-20.33.08-qec6a6jgd2fsghn58a9wofsrhldiu1d7wza7djo7fw.jpg" alt="Ruang Perkuliahan">
+                    <div class="facility-content">
+                        <h3>Ruang Perkuliahan</h3>
+                        <p>Fasilitas yang digunakan untuk kegiatan belajar mengajar.</p>
+                    </div>
+                </div>
+                
+                <div class="facility-card">
+                    <img src="1701790575220-scaled-qgddperqs9h2iw2vj4hy9i6zifg74qg51rg4nh83vw.jpg" alt="Laboratorium Komputer Sisfo">
+                    <div class="facility-content">
+                        <h3>Laboratorium Komputer Sisfo</h3>
+                        <p>Fasilitas yang digunakan untuk praktikum pada mata kuliah tertentu.</p>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <img src="WhatsApp-Image-2023-12-05-at-23.40.51_3bb08f8b-scaled-qgdfg4k2sr4632aepnv0d62uzsdxdyqn65ui179vxo.jpg" alt="Smart Area">
+                    <div class="facility-content">
+                        <h3>Smart Area</h3>
+                        <p>Tempat untuk melakukan diskusi ataupun mengerjakan tugas.</p>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <img src="WhatsApp-Image-2023-12-05-at-23.44.56_a48ea137-qgdfpqgonchbur0v7dyj495szqyxebkmbqj3zxzl4c.jpg" alt="Ruang Dosen">
+                    <div class="facility-content">
+                        <h3>Ruang Dosen</h3>
+                        <p>Ruang yang dikhususkan untuk dosen Program Studi Sistem Informasi.</p>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <img src="WhatsApp-Image-2023-12-05-at-22.57.59_97cf90bb-scaled-qgddt48tqqjsbiozvq6z3kifv56bhr60w432srq7cc.jpg" alt="Ruang Baca">
+                    <div class="facility-content">
+                        <h3>Ruang Baca</h3>
+                        <p>Sebagai ruang arsip tugas akhir mahasiswa FMIPA UNTAN.</p>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <img src="WhatsApp-Image-2023-12-05-at-22.58.00_8cd625a4-scaled-qgddvipz7hu5zn7durkngyouilc35wpbw03qy85zfw.jpg" alt="LabKom FMIPA">
+                    <div class="facility-content">
+                        <h3>LabKom FMIPA</h3>
+                        <p>Laboratorium Komputer untuk kegiatan belajar mengajar.</p>
+                    </div>
+                </div>
 
     </div> <div class="footer">
         <div class="footer-content">
