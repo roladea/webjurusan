@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dosen & Staff - FMIPA UNTAN</title>
+    <style>
+        /* SEMUA CSS DASAR ANDA (Sama seperti halaman lain) */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #222;
+            background-color: #f9f9f9;
+        }
+        .header { background-color: #004080; border-bottom: 2px solid #eaeaea; padding: 20px 0 0 0;}
+        .header-content { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: auto; padding: 0 40px;}
+        .logo-area { display: flex; align-items: center;}
+        .logo { width: 78px; height: 78px; background: #d6eaec; border-radius: 50%; margin-right: 24px; display: flex; align-items: center; justify-content: center;}
+        .logo img { max-width: 230%; max-height: 230%; object-fit: contain;}
+        .faculty-title { font-size: 1.25rem; font-weight: bold; color: #ffffff;}
+        .subtitle { font-size: 1rem; color: #f0f0f0; margin-top: 4px;}
+        .nav { display: flex; align-items: center; gap: 32px; font-size: 1.08rem; font-weight: 600;}
+        .nav a { color: #ffffff; text-decoration: none; transition: color 0.2s; position: relative; padding-bottom: 3px;}
+        .nav a.active, .nav a:hover { color: #ffc600;}
+        .nav a.active::after { content: ''; display: block; height: 4px; border-radius: 2px; background: #ffc600; width: 100%; position: absolute; bottom: -3px; left: 0;}
+        .main-content { max-width: 900px; margin: 35px auto; padding: 20px 24px 32px 24px; background: #fff; border-radius: 10px; box-shadow: 0 2px 16px rgba(0,0,0,0.06);}
+        .main-section { margin-bottom: 38px; }
+        .main-section h2 { color: #004080; margin-bottom: 8px; font-weight: bold; font-size: 1.2rem;}
+        .footer { background: #181820; color: #fff; padding: 40px 0; margin-top: 40px; font-size: 0.97rem; }
+        .footer-content { max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; padding: 0 40px; }
+        .footer-col { flex: 1 1 220px; margin-bottom: 10px; min-width: 200px; }
+        .footer-title { font-weight: bold; font-size: 1.05rem; margin-bottom: 12px; border-bottom: 1px solid #4a4a5a; padding-bottom: 4px; }
+        .footer-list { list-style: none; padding: 0; margin: 0; line-height: 2.05; color: #e4e4e5; }
+        .footer-list a { color: #e4e4e5; text-decoration: none; transition: color 0.2s; }
+        .footer-list a:hover { color: #ffc600; }
+        .footer-logo { margin-bottom: 15px; }
+        @media (max-width: 700px){ .header-content, .footer-content { padding: 0 10px; flex-direction: column; gap:20px;} .nav { gap:18px; } .footer-content { gap:20px;} .main-content { padding: 12px 5px 18px 5px; } }
+        
+        /* CSS UNTUK JUDUL SAMBUTAN DEKAN (Kita pakai ulang) */
+        .section-title-wrapper {
+            display: flex; 
+            align-items: center; 
+            border-bottom: 3px solid #ffc600; 
+            padding-bottom: 10px; 
+            margin-bottom: 35px; /* Jarak lebih besar untuk grid foto */
+        }
+        .section-title-wrapper .title-icon {
+            font-size: 2.2rem; 
+            margin-right: 15px; 
+            color: #333;
+        }
+        .section-title-wrapper h2 {
+            margin: 0; 
+            color: #333; 
+            font-size: 1.6rem; 
+            font-weight: 700;
+        }
+
+        /* ▼▼▼ CSS BARU UNTUK KARTU DOSEN ▼▼▼ */
+        .dosen-grid {
+            display: grid;
+            /* 4 kolom di layar besar, 2 di layar sedang, 1 di layar kecil */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .dosen-card {
+            text-align: center;
+        }
+
+        .dosen-photo-wrapper {
+            position: relative;
+            margin-bottom: 15px;
+            display: inline-block; /* Agar wrapper pas dengan gambar */
+        }
+
+        .dosen-photo {
+            width: 140px; /* Lebar foto */
+            height: 140px; /* Tinggi foto */
+            border-radius: 50%; /* Membuat foto jadi bulat */
+            object-fit: cover; /* Memastikan foto tidak gepeng */
+            border: 1px solid #ddd; /* Garis tipis di foto */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .dosen-name {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 2px;
+        }
+
+        .dosen-title {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 4px;
+        }
+        
+        .dosen-role {
+            font-size: 0.9rem;
+            color: #004080; /* Warna biru untuk jabatan */
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .dosen-links {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .dosen-link-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #f0f0f0; /* Background ikon abu-abu */
+            color: #555;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+        .dosen-link-icon:hover {
+            background-color: #ddd;
+        }
+        /* ▲▲▲ AKHIR DARI CSS BARU ▲▲▲ */
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="logo-area">
+                <div class="logo">
+                    <img src="logountan.png" alt="Logo Universitas Tanjungpura" />
+                </div>
+                <div>
+                    <div class="faculty-title">Fakultas Matematika dan Ilmu Pengetahuan Alam</div>
+                    <div class="subtitle">Universitas Tanjungpura</div>
+                </div>
+            </div>
+            
+            <nav class="nav">
+                <a href="index.html">Beranda</a> 
+                <a href="programstudi.html">Program Pendidikan</a>
+                <a href="#">Penelitian</a>
+                <a href="#" class="active">Dosen</a> <a href="#">Mahasiswa & Alumni</a>
+                <a href="profil.html">Profil</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="main-content">
+        
+        <section class="main-section" id="dosen">
+            
+            <div class="section-title-wrapper">
+                <span class="title-icon">👨‍🏫</span>
+                <h2>Dosen</h2>
+            </div>
+            
+            <div class="dosen-grid">
+                
+                <div class="dosen-card">
+                    <div class="dosen-photo-wrapper">
+                        <img src="foto-renny.jpg" alt="Renny Puspita Sari" class="dosen-photo">
+                    </div>
+                    <div class="dosen-name">Renny Puspita Sari, S.T., M.T.</div>
+                    <div class="dosen-role">Ketua Jurusan Sistem Informasi</div>
+                    <div class="dosen-links">
+                        <a href="#" class="dosen-link-icon">G</a>
+                        <a href="#" class="dosen-link-icon">S</a>
+                        <a href="#" class="dosen-link-icon">O</a>
+                    </div>
+                </div>
+
+                <div class="dosen-card">
+                    <img src="foto-ibnur.jpg" alt="Ibnur Rusjdi" class="dosen-photo">
+                    <div class="dosen-name">Ibnur Rusjdi, S.Kom., M.M.</div>
+                    <div class="dosen-role">Sekretaris Jurusan Sistem Informasi</div>
+                    <div class="dosen-links">
+                        <a href="#" class="dosen-link-icon">G</a>
+                        <a href="#" class="dosen-link-icon">S</a>
+                        <a href="#" class="dosen-link-icon">O</a>
+                    </div>
+                </div>
+
+                <div class="dosen-card">
+                    <img src="foto-nurul.jpg" alt="Nurul Mutiah" class="dosen-photo">
+                    <div class="dosen-name">Nurul Mutiah, S.T., M.T.</div>
+                    <div class="dosen-role">Ketua Kelompok Keahlian...</div>
+                    <div class="dosen-links">
+                        <a href="#" class="dosen-link-icon">G</a>
+                        <a href="#" class="dosen-link-icon">S</a>
+                        <a href="#" class="dosen-link-icon">O</a>
+                    </div>
+                </div>
+
+                <div class="dosen-card">
+                    <img src="foto-dian.jpg" alt="Dian Prawira" class="dosen-photo">
+                    <div class="dosen-name">Dian Prawira, S.T., M.Eng.</div>
+                    <div class="dosen-role">Ketua Kelompok Keahlian...</div>
+                    <div class="dosen-links">
+                        <a href="#" class="dosen-link-icon">G</a>
+                        <a href="#" class="dosen-link-icon">S</a>
+                        <a href="#" class="dosen-link-icon">O</a>
+                    </div>
+                </div>
+
+                <div class="dosen-card">
+                    <img src="foto-ilhamsyah.jpg" alt="Ilhamsyah" class="dosen-photo">
+                    <div class="dosen-name">Ilhamsyah, S.Si., M.Cs.</div>
+                    <div class="dosen-role">Anggota Kelompok Keahlian...</div>
+                    <div class="dosen-links">
+                        <a href="#" class="dosen-link-icon">G</a>
+                        <a href="#" class="dosen-link-icon">S</a>
+                        <a href="#" class="dosen-link-icon">O</a>
+                    </div>
+                </div>
+                
+                </div>
+        </section>
+
+
+        <section class="main-section" id="staff" style="margin-top: 50px;">
+            
+            <div class="section-title-wrapper">
+                <span class="title-icon">💼</span>
+                <h2>Staff</h2>
+            </div>
+            
+            <div class="dosen-grid">
+
+                <div class="dosen-card">
+                    <img src="foto-solihin.jpg" alt="Solihin" class="dosen-photo">
+                    <div class="dosen-name">Solihin, S.Kom.</div>
+                    <div class="dosen-role">Laboran Jurusan Sistem Informasi</div>
+                    <div class="dosen-links">
+                        <a href="#" class="dosen-link-icon">G</a>
+                        <a href="#" class="dosen-link-icon">S</a>
+                        <a href="#" class="dosen-link-icon">O</a>
+                    </div>
+                </div>
+
+                <div class="dosen-card">
+                    <img src="foto-agus.jpg" alt="Agus Setiawan" class="dosen-photo">
+                    <div class="dosen-name">Agus Setiawan, S.Si.</div>
+                    <div class="dosen-role">Admin Jurusan Sistem Informasi</div>
+                    <div class="dosen-links">
+                        <a href="#" class="dosen-link-icon">G</a>
+                        <a href="#" class="dosen-link-icon">S</a>
+                        <a href="#" class="dosen-link-icon">O</a>
+                    </div>
+                </div>
+                
+                </div>
+        </section>
+
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+             <div class="footer-col">
+                <div class="footer-logo"> 
+                    <span style="background:#fff; padding:8px; border-radius:6px; color:#004080;">FMIPA UNTAN</span>
+                </div>
+                Gedung Dekanat FMIPA UNTAN<br/>
+                Jl. Profesor H. Hadari Nawawi<br/>
+                Pontianak, Kalimantan Barat 78124<br/>
+                Indonesia<br/>
+                Telepon : (0561) 123456<br/>
+                Email: fmipa@untan.ac.id
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">Akademik</div>
+                <ul class="footer-list">
+                    <li><a href="matematika.html">Jurusan Matematika</a></li>
+                    </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">Tentang Fakultas</div>
+                <ul class="footer-list">
+                    <li><a href="sejarah.html">Sejarah FMIPA UNTAN</a></li>
+                    <li><a href="pimpinan.html">Manajemen</a></li>
+                    <li><a href="dosen.html">Profil Dosen</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">Hubungi Kami</div>
+                <ul class="footer-list">
+                    <li><a href="#">Kunjungan Kampus</a></li>
+                    <li><a href="#">Peta Kampus</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Sistem Informasi - FMIPA UNTAN</title>
     <style>
-        /* CSS DASAR ANDA (Sama seperti halaman lain) */
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -23,40 +22,23 @@
         .nav a { color: #ffffff; text-decoration: none; transition: color 0.2s; position: relative; padding-bottom: 3px;}
         .nav a.active, .nav a:hover { color: #ffc600;}
         .nav a.active::after { content: ''; display: block; height: 4px; border-radius: 2px; background: #ffc600; width: 100%; position: absolute; bottom: -3px; left: 0;}
-       .main-content {
+        
+        .main-content {
             max-width: 900px;
             margin: 35px auto;
             padding: 20px 24px 32px 24px;
-            
-            /* ▼▼▼ UBAH DI SINI ▼▼▼ */
             background: #5B3A8B; /* Warna ungu tua */
-            /* ▲▲▲ AKHIR PERUBAHAN ▲▲▲ */
-
             border-radius: 10px;
             box-shadow: 0 2px 16px rgba(255, 255, 255, 0.06);
-            color: #ffffff; /* Tambahkan ini agar teks di dalamnya jadi putih dan mudah dibaca */
+            color: #ffffff; /* Teks di dalam jadi putih */
         }
+        
         .main-section { margin-bottom: 38px; }
-        .main-section h2 { color: #5B3A8B; margin-bottom: 8px; font-weight: bold; font-size: 1.2rem;}
-        .stats-divider {
-            /* ... (kode Anda yang sudah ada) ... */
-        }
-
-        /* ▼▼▼ TAMBAHKAN KODE BARU INI ▼▼▼ */
-        
-        /* Ini akan menargetkan HANYA <h2> di dalam judul statistik */
-        .stats-title-container h2 {
-            color: #004080; /* <-- UBAH JADI WARNA BIRU TUA */
-        }
-        
-        /* ▲▲▲ AKHIR DARI KODE BARU ▲▲▲ */
-
-        .stats-grid {
-            /* ... (sisa kode Anda) ... */
-        }
+        .main-section h2 { color: #ffff; margin-bottom: 8px; font-weight: bold; font-size: 1.2rem;}
         .main-section h3 { color: #ffff; font-weight: 600; font-size: 1.1rem; margin-top: 25px;}
         .main-section ul { margin-left: 18px; margin-top: 5px; }
         .main-section p { line-height: 1.6; }
+        
         .footer { background: #181820; color: #fff; padding: 40px 0; margin-top: 40px; font-size: 0.97rem; }
         .footer-content { max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; padding: 0 40px; }
         .footer-col { flex: 1 1 220px; margin-bottom: 10px; min-width: 200px; }
@@ -65,20 +47,16 @@
         .footer-list a { color: #e4e4e5; text-decoration: none; transition: color 0.2s; }
         .footer-list a:hover { color: #ffc600; }
         .footer-logo { margin-bottom: 15px; }
+        
         @media (max-width: 700px){ .header-content, .footer-content { padding: 0 10px; flex-direction: column; gap:20px;} .nav { gap:18px; } .footer-content { gap:20px;} .main-content { padding: 12px 5px 18px 5px; } }
         
         .hero-section {
             position: relative;
             width: 100%;
-            height: 450px; /* Anda bisa ubah tingginya */
-            
-            /* ▼▼▼ UBAH DI SINI ▼▼▼ */
-            /* Ganti 'e31f1066...' dengan nama file foto Anda */
+            height: 450px;
             background-image: url('Gedung-baru2.jpg-597-1024x576.jpg'); 
             background-size: cover;
             background-position: center;
-            /* ▲▲▲ AKHIR PERUBAHAN ▲▲▲ */
-
             display: flex;
             align-items: center;
             justify-content: center;
@@ -94,7 +72,7 @@
             background-color: rgba(0, 0, 0, 0.5); /* Lapisan gelap agar teks terbaca */
         }
         .hero-content {
-            position: relative; /* Agar di atas overlay */
+            position: relative;
             z-index: 2;
             max-width: 800px;
             padding: 20px;
@@ -102,7 +80,7 @@
         .hero-subtitle {
             font-size: 1rem;
             font-weight: 600;
-            color: #ffc600; /* Warna kuning aksen Anda */
+            color: #ffc600;
             letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 10px;
@@ -131,7 +109,7 @@
             transition: all 0.3s;
         }
         .hero-btn.primary {
-            background-color: #ffc600; /* Tombol kuning */
+            background-color: #ffc600;
             color: #333;
         }
         .hero-btn.primary:hover {
@@ -145,64 +123,53 @@
             background-color: white;
             color: #333;
         }
-        
-        /* ... (CSS Anda sebelumnya, seperti .map-iframe) ... */
 
-        /* ▼▼▼ TAMBAHKAN CSS BARU UNTUK BERITA ▼▼▼ */
         .news-grid {
             display: grid;
-            /* Membuat 3 kolom di layar besar, dan 1 di layar kecil */
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px; /* Jarak antar kartu */
-            margin-top: 25px; /* Jarak dari judul "Berita" */
+            gap: 25px;
+            margin-top: 25px;
         }
-
         .news-card {
-            background: #ffffff; /* Kartu punya background putih solid */
+            background: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-            overflow: hidden; /* Penting agar gambar tidak keluar dari sudut */
+            overflow: hidden;
             text-decoration: none;
             color: #333;
             display: flex;
             flex-direction: column;
             transition: transform 0.2s, box-shadow 0.2s;
         }
-        
         .news-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.12);
         }
-
         .card-image {
-            height: 200px; /* Atur tinggi gambar */
+            height: 200px;
             background-size: cover;
             background-position: center;
-            background-color: #eee; /* Warna placeholder */
+            background-color: #eee;
         }
-        
         .card-content {
             padding: 20px;
             display: flex;
             flex-direction: column;
-            flex-grow: 1; /* Membuat konten memenuhi sisa ruang */
+            flex-grow: 1;
         }
-
         .card-content h3 {
             font-size: 1.15rem;
             font-weight: 700;
-            color: #004080; /* Warna biru judul */
+            color: #004080; /* Judul berita tetap biru agar kontras di kartu putih */
             margin-top: 0;
             margin-bottom: 10px;
         }
-        
         .card-content p {
             font-size: 0.95rem;
             line-height: 1.6;
             margin-bottom: 15px;
-            flex-grow: 1; /* Mendorong link "Baca" ke bawah */
+            flex-grow: 1;
         }
-
         .card-link {
             font-weight: 600;
             color: #004080;
@@ -215,59 +182,44 @@
         .stats-section {
             padding-top: 25px;
             margin-top: 35px;
-            /* Garis pemisah tipis warna putih transparan */
             border-top: 1px solid rgba(255, 255, 255, 0.2); 
         }
-        
         .stats-title-container {
             text-align: center;
             margin-bottom: 30px;
         }
-
-        /* Judul "Sistem Informasi dalam Angka" */
-        /* Ini akan otomatis berwarna putih karena aturan .main-section h2 */
         .stats-title-container h2 {
             font-size: 1.8rem;
-            color:#5B3A8B;
             margin-bottom: 10px;
         }
-
         .stats-divider {
             font-weight: 800;
-            color: #ffffff; /* Warna putih untuk '...' */
+            color: #ffffff;
             letter-spacing: 4px;
             font-size: 1.2rem;
         }
-
         .stats-grid {
             display: grid;
-            /* 4 kolom di layar besar, 2 di layar sedang */
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 20px;
         }
-
         .stat-card {
-            background: #ffffff;  /* KARTU WARNA PUTIH */
-            color: #333;         /* TEKS DI DALAM KARTU WARNA HITAM */
+            background: #ffffff;
+            color: #333;
             padding: 25px 20px;
             border-radius: 8px;
             text-align: center;
-            /* Garis bawah hijau/mint seperti di screenshot */
             border-bottom: 6px solid #63F2B3; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-
         .stat-number {
             font-size: 3rem;
             font-weight: 700;
             color: #222;
         }
-        
-        /* Memberi warna pada tanda '+' */
         .stat-number span {
-            color: #5B3A8B; /* Warna hijau/mint */
+            color: #5B3A8B;
         }
-
         .stat-label {
             font-size: 0.95rem;
             font-weight: 500;
@@ -338,12 +290,7 @@
             </ul>
         </section>
 
-        <p>
-            </p>
-        </section>
-
         <section class="main-section" id="berita">
-            
             <div class="section-title-wrapper">
                 <span class="title-icon">📰</span>
                 <h2>BERITA & PENGUMUMAN</h2>
@@ -378,46 +325,38 @@
                     </div>
                 </a>
 
-            </div> </section>
-        </div> <div class="lokasi-content-wrapper" id="lokasi">
-    </div>
-
+            </div> 
         </section>
 
         <section class="main-section stats-section" id="statistik">
-            
             <div class="stats-title-container">
                 <h2>Sistem Informasi dalam Angka</h2>
                 <div class="stats-divider">...</div>
             </div>
 
             <div class="stats-grid">
-                
                 <div class="stat-card">
                     <div class="stat-number">400<span>+</span></div>
                     <div class="stat-label">Mahasiswa Aktif</div>
                 </div>
-                
                 <div class="stat-card">
                     <div class="stat-number">40<span>+</span></div>
                     <div class="stat-label">Dosen pengampu</div>
                 </div>
-                
                 <div class="stat-card">
                     <div class="stat-number">500<span>+</span></div>
                     <div class="stat-label">Alumni</div>
                 </div>
-                
                 <div class="stat-card">
                     <div class="stat-number">30<span>+</span></div>
                     <div class="stat-label">Mata Kuliah</div>
                 </div>
+            </div> 
+        </section>
 
-            </div> </section>
-        </div> <div class="footer">
-    <div class="footer">
+    </div> <div class="footer">
         <div class="footer-content">
-             <div class="footer-col">
+            <div class="footer-col">
                 <div class="footer-logo"> 
                     <span style="background:#fff; padding:8px; border-radius:6px; color:#004080;">FMIPA UNTAN</span>
                 </div>
@@ -432,7 +371,7 @@
                 <div class="footer-title">Akademik</div>
                 <ul class="footer-list">
                     <li><a href="matematika.html">Jurusan Sistem Informasi</a></li>
-                    </ul>
+                </ul>
             </div>
             <div class="footer-col">
                 <div class="footer-title">Tentang Fakultas</div>

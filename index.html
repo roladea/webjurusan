@@ -9,19 +9,15 @@
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #222;
-            background-color: #f9f9f9; /* Warna cadangan */
-            
-            /* GANTI NAMA FILE INI jika nama file foto Anda berbeda */
+            background-color: #f9f9f9; 
             background-image: url('e31f106634b62687c180d767b0f7ec48Galeri-Mipa-3.jpg'); 
-            
             background-size: cover; 
             background-position: center; 
-            background-attachment: fixed; /* Diam saat di-scroll */
+            background-attachment: fixed; 
         }
         
-        /* HEADER BIRU TUA DENGAN TEKS PUTIH */
         .header { 
-            background-color: #004080; /* <-- BIRU TUA */
+            background-color: #004080; 
             border-bottom: 2px solid #eaeaea; 
             padding: 20px 0 0 0;
         }
@@ -48,16 +44,16 @@
         .faculty-title { 
             font-size: 1.25rem; 
             font-weight: bold; 
-            color: #ffffff; /* <-- TEKS PUTIH */
+            color: #ffffff; 
         }
         .subtitle { 
             font-size: 1rem; 
-            color: #f0f0f0; /* <-- TEKS PUTIH PUDAR */
+            color: #f0f0f0; 
             margin-top: 4px;
         }
         .nav { display: flex; align-items: center; gap: 32px; font-size: 1.08rem; font-weight: 600;}
         .nav a { 
-            color: #ffffff; /* <-- TEKS PUTIH */
+            color: #ffffff; 
             text-decoration: none; 
             transition: color 0.2s; 
             position: relative; 
@@ -82,12 +78,10 @@
             font-size: 28px;
         }
         
-        /* KONTEN UTAMA DENGAN BACKGROUND PUTIH TRANSPARAN */
         .main-content {
             max-width: 900px;
             margin: 35px auto;
             padding: 20px 24px 32px 24px;
-            /* Ini adalah PUTIH (255,255,255) dengan transparansi 95% */
             background: rgba(255, 255, 255, 0.95);
             border-radius: 10px;
             box-shadow: 0 2px 16px rgba(0,0,0,0.06);
@@ -95,7 +89,6 @@
         .main-section {
             margin-bottom: 38px;
         }
-        /* ... (kode CSS Anda sebelumnya) ... */
         .main-section h2 {
             color: #004080;
             margin-bottom: 8px;
@@ -103,42 +96,41 @@
             font-size: 1.2rem;
         }
 
-        /* ▼▼▼ TAMBAHKAN KODE CSS BARU INI ▼▼▼ */
         .section-title-wrapper {
-            display: flex; /* Membuat ikon dan teks sejajar */
-            align-items: center; /* Menyelaraskan secara vertikal */
-            border-bottom: 3px solid #ffc600; /* Garis bawah kuning */
-            padding-bottom: 10px; /* Jarak antara teks dan garis bawah */
-            margin-bottom: 25px; /* Jarak ke paragraf "Assalamualaikum" */
+            display: flex; 
+            align-items: center; 
+            border-bottom: 3px solid #ffc600; 
+            padding-bottom: 10px; 
+            margin-bottom: 25px; 
         }
         
         .section-title-wrapper .title-icon {
-            font-size: 2.2rem; /* Ukuran ikon megafon */
-            margin-right: 15px; /* Jarak antara ikon dan teks */
+            font-size: 2.2rem; 
+            margin-right: 15px; 
             color: #333;
         }
 
         .section-title-wrapper h2 {
-            margin: 0; /* Hapus margin bawaan h2 */
-            color: #333; /* Warna teks judul (hitam) */
-            font-size: 1.6rem; /* Membuatnya sedikit lebih besar */
-            font-weight: 700; /* Bold */
+            margin: 0; 
+            color: #333; 
+            font-size: 1.6rem; 
+            font-weight: 700; 
         }
-        /* ▲▲▲ AKHIR DARI CSS BARU ▲▲▲ */
+        
         .map-iframe {
-            width: 100%;      /* Lebar penuh */
-            height: 450px;    /* Tingginya, bisa Anda sesuaikan */
-            border-radius: 8px; /* Sudut agak melengkung */
-            border: 0;        /* Hapus border default */
-            margin-top: 25px; /* Jarak dari judul */
+            width: 100%;      
+            height: 450px;    
+            border-radius: 8px; 
+            border: 0;        
+            margin-top: 25px; 
         }
 
         .lokasi-content-wrapper {
-            background: rgba(255, 255, 255, 0.95); /* Putih transparan */
-            border-radius: 10px; /* Sudut melengkung */
-            padding: 20px 24px 32px 24px; /* Padding sama seperti main-content */
-            box-shadow: 0 2px 16px rgba(0,0,0,0.06); /* Shadow */
-            margin-top: 35px; /* Jarak dari section sebelumnya */
+            background: rgba(255, 255, 255, 0.95); 
+            border-radius: 10px; 
+            padding: 20px 24px 32px 24px; 
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06); 
+            margin-top: 35px; 
         }
 
         .main-section ul {
@@ -311,31 +303,24 @@ Dengan senang hati kami menerima komentar, saran, dan kerja sama guna perbaikan 
     <script>
         document.querySelectorAll('.nav a').forEach(link => {
             link.addEventListener('click', function(e) {
-                // Jangan lakukan apa-apa jika link ini SUDAH aktif
                 if (this.classList.contains('active')) {
                     e.preventDefault();
                     return;
                 }
 
-                // Cek apakah link ini adalah link internal (#)
                 const href = this.getAttribute('href');
                 if (href.startsWith('#')) {
-                    // Jika ya, cegah pindah halaman
                     e.preventDefault();
                     
-                    // Pindahkan kelas 'active'
                     document.querySelectorAll('.nav a').forEach(l => l.classList.remove('active'));
                     this.classList.add('active');
                     
-                    // Scroll ke section
-                    const id = href.substring(1); // Ambil id dari href
+                    const id = href.substring(1); 
                     let section = document.getElementById(id);
                     if(section) {
                         section.scrollIntoView({behavior: "smooth"});
                     }
                 }
-                // Jika href BUKAN link internal (seperti "program.html"),
-                // biarkan browser pindah halaman secara normal.
             });
         });
     </script>
